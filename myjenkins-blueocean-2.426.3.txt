@@ -1,0 +1,31 @@
+PS C:\DevOps\GitHub\jenkins-101> docker build -t myjenkins-blueocean:2.426.3 .
+[+] Building 55.8s (11/11) FINISHED                                               docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                              0.0s
+ => => transferring dockerfile: 1.37kB                                                            0.0s 
+ => [internal] load metadata for docker.io/jenkins/jenkins:2.426.3-jdk11                          0.4s 
+ => [auth] jenkins/jenkins:pull token for registry-1.docker.io                                    0.0s 
+ => [internal] load .dockerignore                                                                 0.0s
+ => => transferring context: 2B                                                                   0.0s 
+ => CACHED [1/6] FROM docker.io/jenkins/jenkins:2.426.3-jdk11@sha256:0f556cdea4f4d0505ad41080d76  0.0s 
+ => => resolve docker.io/jenkins/jenkins:2.426.3-jdk11@sha256:0f556cdea4f4d0505ad41080d764fda321  0.0s 
+ => [internal] load build context                                                                 0.0s 
+ => => transferring context: 32B                                                                  0.0s 
+ => [2/6] RUN curl -L https://github.com/jenkinsci/plugin-installation-manager-tool/releases/lat  0.6s 
+ => [3/6] RUN apt-get update && apt-get install -y     lsb-release     python3-pip     curl      46.5s
+ => [4/6] RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/sh  6.0s
+ => [5/6] COPY plugins.txt /usr/share/jenkins/ref/plugins.txt                                     0.0s
+ => ERROR [6/6] RUN jenkins-plugin-cli --verbose --plugin-file /usr/share/jenkins/ref/plugins.tx  0.3s
+------
+ > [6/6] RUN jenkins-plugin-cli --verbose --plugin-file /usr/share/jenkins/ref/plugins.txt:
+0.257 Error: Invalid or corrupt jarfile /usr/local/bin/jenkins-plugin-cli.jar
+------
+Dockerfile:32
+--------------------
+  30 |     # Copy plugin list and install plugins
+  31 |     COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+  32 | >>> RUN jenkins-plugin-cli --verbose --plugin-file /usr/share/jenkins/ref/plugins.txt
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c jenkins-plugin-cli --verbose --plugin-file /usr/share/jenkins/ref/plugins.txt" did not complete successfully: exit code: 1
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/phb1vbo6zujavgjyv062673gp
+PS C:\DevOps\GitHub\jenkins-101> 

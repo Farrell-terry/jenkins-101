@@ -1,0 +1,135 @@
+PS C:\DevOps\GitHub\jenkins-101> docker build -t myjenkins-blueocean:2.426.3 .
+[+] Building 74.0s (8/8) FINISHED                                                 docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                              0.0s
+ => => transferring dockerfile: 895B                                                              0.0s
+ => [internal] load metadata for docker.io/jenkins/jenkins:2.426.3-jdk11                          1.0s 
+ => [auth] jenkins/jenkins:pull token for registry-1.docker.io                                    0.0s
+ => [internal] load .dockerignore                                                                 0.0s
+ => => transferring context: 2B                                                                   0.0s 
+ => [1/4] FROM docker.io/jenkins/jenkins:2.426.3-jdk11@sha256:0f556cdea4f4d0505ad41080d764fda32  13.1s 
+ => => resolve docker.io/jenkins/jenkins:2.426.3-jdk11@sha256:0f556cdea4f4d0505ad41080d764fda321  0.0s 
+ => => sha256:61cd405307748c7c2545c6ee907287440f0c9ed776c4e480b62c48f817e7087f 263B / 263B        0.2s
+ => => sha256:15eb7a17db9250d6d20d377a13926948d269c34b40f3e8038d5bc9f14021a75f 392B / 392B        0.2s
+ => => sha256:eae28a83ff8f308f10c0dc2d3af9a55a0c85e192252dbcaf5c783fa9fda644fd 1.23kB / 1.23kB    0.2s 
+ => => sha256:ed16ec88dd8a774efa7ddc4def4525a3a21932089e2304f170eac5c132d78c75 1.92kB / 1.92kB    0.2s 
+ => => sha256:e1f034047864a8256e157e2195b503eee1498e1ca45858e2fa2870d4b38f85d9 190B / 190B        0.1s
+ => => sha256:ac5fc0a2362e16cd67a60106d3c3c234cb681ef99e4f3a14f170f8e625fe4894 77.37MB / 77.37MB  9.5s
+ => => sha256:b7fd15023031073340961bef2d2851f990aa88f751f130e53b2c0223f9110c69 6.20MB / 6.20MB    0.4s 
+ => => sha256:0f760cf88b2d982aaae22caf576ffd2bceb52e44674a169a7c1f6f47bf11283e 89.35MB / 89.35MB  9.8s 
+ => => sha256:da9419a1cff4133af0dc6582c91789760a8433c18f63a90b44db6f697baa5e09 183B / 183B        0.1s
+ => => sha256:866f59365203ef550b163b79ace82a229fec35746ab62512342be4323b16d39f 1.23kB / 1.23kB    0.1s 
+ => => sha256:902fe2af3265c0a06c29067115a5741181da68e49ba48425d208c8fbe246d2a3 8.87MB / 8.87MB    1.2s 
+ => => sha256:5303cfd924b5790230d35c64860b06c0d70b814659ff27a624b38bfe14894e52 61.36MB / 61.36MB  7.6s 
+ => => sha256:1b13d4e1a46e5e969702ec92b7c787c1b6891bff7c21ad378ff6dbc9e751d5d4 49.56MB / 49.56MB  6.4s 
+ => => extracting sha256:1b13d4e1a46e5e969702ec92b7c787c1b6891bff7c21ad378ff6dbc9e751d5d4         2.2s 
+ => => extracting sha256:5303cfd924b5790230d35c64860b06c0d70b814659ff27a624b38bfe14894e52         1.3s 
+ => => extracting sha256:902fe2af3265c0a06c29067115a5741181da68e49ba48425d208c8fbe246d2a3         0.1s 
+ => => extracting sha256:866f59365203ef550b163b79ace82a229fec35746ab62512342be4323b16d39f         0.0s 
+ => => extracting sha256:da9419a1cff4133af0dc6582c91789760a8433c18f63a90b44db6f697baa5e09         0.0s 
+ => => extracting sha256:0f760cf88b2d982aaae22caf576ffd2bceb52e44674a169a7c1f6f47bf11283e         0.3s 
+ => => extracting sha256:e1f034047864a8256e157e2195b503eee1498e1ca45858e2fa2870d4b38f85d9         0.0s 
+ => => extracting sha256:b7fd15023031073340961bef2d2851f990aa88f751f130e53b2c0223f9110c69         0.1s 
+ => => extracting sha256:ac5fc0a2362e16cd67a60106d3c3c234cb681ef99e4f3a14f170f8e625fe4894         0.6s 
+ => => extracting sha256:ed16ec88dd8a774efa7ddc4def4525a3a21932089e2304f170eac5c132d78c75         0.0s 
+ => => extracting sha256:eae28a83ff8f308f10c0dc2d3af9a55a0c85e192252dbcaf5c783fa9fda644fd         0.0s 
+ => => extracting sha256:15eb7a17db9250d6d20d377a13926948d269c34b40f3e8038d5bc9f14021a75f         0.0s 
+ => => extracting sha256:61cd405307748c7c2545c6ee907287440f0c9ed776c4e480b62c48f817e7087f         0.0s 
+ => [2/4] RUN apt-get update && apt-get install -y     lsb-release     python3-pip     curl      49.3s 
+ => [3/4] RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/sh  5.7s 
+ => ERROR [4/4] RUN jenkins-plugin-cli --plugins     "blueocean:1.25.3 docker-workflow:1.28 git:  4.3s 
+------
+ > [4/4] RUN jenkins-plugin-cli --plugins     "blueocean:1.25.3 docker-workflow:1.28 git:5.2.0 credentials-binding:1.31":
+3.484 War not found, installing all plugins: /usr/share/java/jenkins.war
+3.732 Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/credentials-binding/1.31/credentials-binding.hpi, or download plugin credentials-binding to file: status code: 404, reason phrase: Not Found
+3.732 Tried downloading credentials-binding from https://get.jenkins.io/plugins/credentials-binding/1.31/credentials-binding.hpi (attempt 1 of 3)
+3.786 Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/credentials-binding/1.31/credentials-binding.hpi, or download plugin credentials-binding to file: status code: 404, reason phrase: Not Found
+3.786 Tried downloading credentials-binding from https://get.jenkins.io/plugins/credentials-binding/1.31/credentials-binding.hpi (attempt 2 of 3)
+3.840 Tried downloading credentials-binding from https://get.jenkins.io/plugins/credentials-binding/1.31/credentials-binding.hpi (attempt 3 of 3)
+3.840 Unable to resolve plugin URL https://updates.jenkins.io/download/plugins/credentials-binding/1.31/credentials-binding.hpi, or download plugin credentials-binding to file: status code: 404, reason phrase: Not Found
+3.840 Downloading from mirrors failed, falling back to https://archives.jenkins.io/
+4.201 Unable to resolve plugin URL https://archives.jenkins.io/plugins/credentials-binding/1.31/credentials-binding.hpi, or download plugin credentials-binding to file: status code: 404, reason phrase: Not Found
+4.204
+4.204 Security warnings:
+4.205 git-client (5.0.3): SECURITY-3590 File system information disclosure vulnerability https://www.jenkins.io/security/advisory/2025-09-03/#SECURITY-3590
+4.205 jakarta-mail-api (2.1.3-1): SECURITY-3617 SMTP command injection vulnerability https://www.jenkins.io/security/advisory/2025-09-03/#SECURITY-3617
+4.205 credentials-binding (677.vdc9d38cb_254d): SECURITY-3499 Improper masking of credentials https://www.jenkins.io/security/advisory/2025-07-09/#SECURITY-3499
+4.205 credentials (1380.va_435002fa_924): SECURITY-3373 Encrypted values of credentials revealed to users with Extended Read permission https://www.jenkins.io/security/advisory/2024-10-02/#SECURITY-3373    
+4.205 blueocean (1.25.3): SECURITY-2502 CSRF vulnerability and missing permission checks https://www.jenkins.io/security/advisory/2022-05-17/#SECURITY-2502
+4.205 blueocean (1.25.3): SECURITY-3116 CSRF vulnerability allows capturing credentials https://www.jenkins.io/security/advisory/2023-08-16/#SECURITY-3116
+4.206 htmlpublisher (1.37): SECURITY-3547 File path information disclosure https://www.jenkins.io/security/advisory/2025-07-09/#SECURITY-3547
+4.212 Multiple plugin prerequisites not met:
+4.212 Plugin blueocean:1.25.3 (via blueocean-git-pipeline:1.27.16) depends on git:5.2.1, but there is an older version defined on the top level - git:5.2.0,
+4.212 Plugin blueocean:1.25.3 (via blueocean-pipeline-api-impl:1.27.16) depends on git:5.2.1, but there is an older version defined on the top level - git:5.2.0,
+4.212 Plugin blueocean:1.25.3 (via blueocean-bitbucket-pipeline:1.27.16->cloudbees-bitbucket-branch-source:895.v15dc41668f03) depends on git:5.2.2, but there is an older version defined on the top level - git:5.2.0,
+4.212 Plugin blueocean:1.25.3 (via blueocean-git-pipeline:1.27.16->git:5.2.1) depends on credentials-binding:642.v737c34dea_6c2, but there is an older version defined on the top level - credentials-binding:1.31,
+4.212 Plugin blueocean:1.25.3 (via blueocean-pipeline-api-impl:1.27.16->pipeline-model-definition:2.2218.v56d0cda_37c72) depends on credentials-binding:677.vdc9d38cb_254d, but there is an older version defined on the top level - credentials-binding:1.31,
+4.212 Plugin blueocean:1.25.3 (via blueocean-bitbucket-pipeline:1.27.16->cloudbees-bitbucket-branch-source:895.v15dc41668f03->git:5.2.2) depends on credentials-binding:677.vdc9d38cb_254d, but there is an older version defined on the top level - credentials-binding:1.31,
+4.212 Plugin blueocean:1.25.3 (via blueocean-github-pipeline:1.27.16->github-branch-source:1807.v50351eb_7dd13->github:1.40.0) depends on git:5.2.1, but there is an older version defined on the top level - git:5.2.0,
+4.212 Plugin blueocean:1.25.3 (via blueocean-pipeline-api-impl:1.27.16->pipeline-model-definition:2.2218.v56d0cda_37c72->pipeline-model-extensions:2.2218.v56d0cda_37c72) depends on credentials-binding:677.vdc9d38cb_254d, but there is an older version defined on the top level - credentials-binding:1.31,      
+4.212 Plugin docker-workflow:1.28 (via docker-commons:445.v6b_646c962a_94) depends on credentials-binding:642.v737c34dea_6c2, but there is an older version defined on the top level - credentials-binding:1.31,
+4.212 Plugin docker-workflow:1.28 (via pipeline-model-definition:2.2218.v56d0cda_37c72) depends on credentials-binding:677.vdc9d38cb_254d, but there is an older version defined on the top level - credentials-binding:1.31,
+4.212 Plugin git:5.2.0 depends on credentials-binding:604.vb_64480b_c56ca_, but there is an older version defined on the top level - credentials-binding:1.31,
+4.212 Plugin credentials-binding:1.31 has unresolvable dependencies: Unable to resolve dependencies for credentials-binding,
+4.212
+4.212 github-branch-source (1807.v50351eb_7dd13) requires a greater version of Jenkins (2.440.3) than 2.426.3,
+4.212
+4.212 workflow-multibranch (795.ve0cb_1f45ca_9a_) requires a greater version of Jenkins (2.462) than 2.426.3,
+4.212
+4.212 git-client (5.0.3) requires a greater version of Jenkins (2.440.3) than 2.426.3,
+4.212
+4.212 mailer (488.v0c9639c1a_eb_3) requires a greater version of Jenkins (2.440.3) than 2.426.3,       
+4.212
+4.212 asm-api (9.7.1-97.v4cc844130d97) requires a greater version of Jenkins (2.452.4) than 2.426.3,   
+4.212
+4.212 workflow-durable-task-step (1378.v6a_3e903058a_3) requires a greater version of Jenkins (2.440.1) than 2.426.3,
+4.212
+4.212 ssh-credentials (349.vb_8b_6b_9709f5b_) requires a greater version of Jenkins (2.440.3) than 2.426.3,
+4.212
+4.212 workflow-job (1436.vfa_244484591f) requires a greater version of Jenkins (2.454) than 2.426.3,   
+4.212
+4.212 workflow-cps (4009.v0089238351a_9) requires a greater version of Jenkins (2.452.4) than 2.426.3, 
+4.212
+4.212 json-api (20241224-119.va_dca_a_b_ea_7da_5) requires a greater version of Jenkins (2.452.4) than 2.426.3,
+4.212
+4.212 gson-api (2.11.0-85.v1f4e87273c33) requires a greater version of Jenkins (2.452.4) than 2.426.3, 
+4.212
+4.212 commons-text-api (1.13.0-150.vfc0d7966fc38) requires a greater version of Jenkins (2.452.4) than 2.426.3,
+4.212
+4.212 joda-time-api (2.13.0-93.v9934da_29b_a_e9) requires a greater version of Jenkins (2.452.4) than 2.426.3,
+4.212
+4.212 plugin-util-api (5.1.0) requires a greater version of Jenkins (2.462.1) than 2.426.3,
+4.212
+4.212 pipeline-groovy-lib (749.v70084559234a_) requires a greater version of Jenkins (2.452.4) than 2.426.3,
+4.212
+4.212 workflow-support (943.v8b_0d01a_7b_a_08) requires a greater version of Jenkins (2.452.4) than 2.426.3,
+4.212
+4.212 pipeline-input-step (508.v584c0e9a_2177) requires a greater version of Jenkins (2.440.3) than 2.426.3,
+4.212
+4.212 caffeine-api (3.2.0-161.v691ef352cee1) requires a greater version of Jenkins (2.440.3) than 2.426.3,
+4.212
+4.212 matrix-project (839.vff91cd7e3a_b_2) requires a greater version of Jenkins (2.440.3) than 2.426.3,
+4.212
+4.212 cloudbees-folder (6.955.v81e2a_35c08d3) requires a greater version of Jenkins (2.462.1) than 2.426.3,
+4.212
+4.212 durable-task (581.v299a_5609d767) requires a greater version of Jenkins (2.440.3) than 2.426.3,  
+4.212
+4.212 pipeline-graph-analysis (231.v56354571a_da_0) requires a greater version of Jenkins (2.452.4) than 2.426.3,
+4.212
+4.212 htmlpublisher (1.37) requires a greater version of Jenkins (2.440.3) than 2.426.3,
+4.212
+4.212 cloudbees-bitbucket-branch-source (895.v15dc41668f03) requires a greater version of Jenkins (2.440.3) than 2.426.3,
+4.212
+4.212 branch-api (2.1206.vd9f35001c95c) requires a greater version of Jenkins (2.452.4) than 2.426.3,  
+4.212
+4.212 workflow-api (1358.vfb_5780da_64cb_) requires a greater version of Jenkins (2.452.4) than 2.426.3
+------
+Dockerfile:23
+--------------------
+  22 |     # Install compatible plugins
+  23 | >>> RUN jenkins-plugin-cli --plugins \
+  24 | >>>     "blueocean:1.25.3 docker-workflow:1.28 git:5.2.0 credentials-binding:1.31"
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c jenkins-plugin-cli --plugins     \"blueocean:1.25.3 docker-workflow:1.28 git:5.2.0 credentials-binding:1.31\"" did not complete successfully: exit code: 1
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/z1r2204emj4mzrqcgkp9ihq1n
+PS C:\DevOps\GitHub\jenkins-101> 
